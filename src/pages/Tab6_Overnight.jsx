@@ -35,7 +35,7 @@ function OvernightChart({ region, selectedDate, target, sample }) {
         dash: ch === 'CANAL 6' ? 'dashdot' : 'solid'
       },
       marker: { color: OV_PALETTE[i % OV_PALETTE.length], size: ch === 'CANAL 6' ? 8 : 5 },
-      hovertemplate: `Hora: %{x}<br>Canal: ${ch}<br>Rating: %{y}<extra></extra>`,
+      hovertemplate: `Hora: %{x}<br>Fecha : <br>Canal: ${ch}<br>Rating: %{y}<extra></extra>`,
     }))
   }, [data])
 
