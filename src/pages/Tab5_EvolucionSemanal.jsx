@@ -57,7 +57,7 @@ function HourChart({ region, channel, selectedDate, target, sample }) {
         opacity: isSelected ? 1 : 0.25 + i * 0.25,
         text: isSelected ? data.map((r, idx) => idx % 5 === 0 && r[col] != null ? r[col].toFixed(1) : '') : undefined,
         textposition: 'top center',
-        hovertemplate: `Hora: %{x}<br>Programa: %{customdata}<br>Rating: %{y}<extra></extra>`,
+        hovertemplate: `Hora: %{x}<br>Programa: %{customdata}<br>Rating: %{y}<br>Fecha: <extra></extra>`,
       }
     })
 
