@@ -8,7 +8,7 @@ import { subDays, format, addMinutes, setHours, setMinutes } from 'date-fns'
 const today = new Date()
 const CHANNELS = ['CANAL 6', 'LAS ESTRELLAS', 'AZTECA 7', 'AZTECA UNO', 'CANAL 5', 'NU9VE']
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+// Helpers 
 function randomRating(base = 50, spread = 30) {
   return parseFloat((base + (Math.random() * spread - spread / 2)).toFixed(1))
 }
@@ -17,7 +17,7 @@ function getLast5Weeks(date) {
   return Array.from({ length: 5 }, (_, i) => format(subDays(date, 7 * i), 'yyyy-MM-dd'))
 }
 
-// ─── Tab 1: Rating Histórico Mensual ─────────────────────────────────────────
+// Tab 1: Rating Histórico Mensual 
 export function mockGetRatingMonthly(channel = 'CANAL 6') {
   const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   return months.map(month => ({
@@ -27,7 +27,7 @@ export function mockGetRatingMonthly(channel = 'CANAL 6') {
   }))
 }
 
-// ─── Tab 2: Rating Nacional (últimos 30 días) ─────────────────────────────────
+//  Tab 2: Rating Nacional (últimos 30 días) 
 export function mockGetRatingNDaysNacional(date = today, startHour = '05', endHour = '26') {
   return Array.from({ length: 30 }, (_, i) => {
     const d = format(subDays(date, 29 - i), 'yyyy-MM-dd')
@@ -39,7 +39,7 @@ export function mockGetRatingNDaysNacional(date = today, startHour = '05', endHo
   })
 }
 
-// ─── Tab 3: Rating Histórico Regional (mensual por región) ───────────────────
+//  Tab 3: Rating Histórico Regional (mensual por región) 
 export function mockGetRatingMonthlyRegion(region = 'ZM Monterrey', channel = 'CANAL 6') {
   const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   return months.map(month => ({
@@ -49,7 +49,7 @@ export function mockGetRatingMonthlyRegion(region = 'ZM Monterrey', channel = 'C
   }))
 }
 
-// ─── Tab 4: Rating Regiones (últimos 30 días por región) ─────────────────────
+//  Tab 4: Rating Regiones (últimos 30 días por región) 
 export function mockGetRatingNDays(date = today, channel = 'CANAL 6') {
   const regions = ['ZMVM', 'ZM Monterrey', 'ZM Guadalajara', 'Interior']
   return Array.from({ length: 30 }, (_, i) => {
@@ -62,7 +62,7 @@ export function mockGetRatingNDays(date = today, channel = 'CANAL 6') {
   })
 }
 
-// ─── Tab 5: Evolución Semanal por hora ───────────────────────────────────────
+//  Tab 5: Evolución Semanal por hora 
 const PROGRAMS = [
   'Hechos MTY', 'Ventaneando', 'Película', 'Noticiero', 'Serie', 'Reality',
   'Noticias Noche', 'Deportes', 'Talk Show', 'Documental'
@@ -83,7 +83,7 @@ export function mockGetRatingHourWithProgram(date = today, region = 'ZM Monterre
   })
 }
 
-// ─── Tab 6: Overnight ─────────────────────────────────────────────────────────
+//  Tab 6: Overnight 
 export function mockGetRatingOvernight(date = today, region = 'ZM Monterrey') {
   const channels_ov = region === 'ZMVM'
     ? ['ADN40','AZTECA 7','AZTECA UNO','CANAL 5','CANAL 6','IMAGEN TV','LAS ESTRELLAS','MILENIO','N+ FORO','NU9VE']
@@ -100,7 +100,7 @@ export function mockGetRatingOvernight(date = today, region = 'ZM Monterrey') {
   })
 }
 
-// ─── Tab 7: Encendidos Evolución Semanal ─────────────────────────────────────
+//  Tab 7: Encendidos Evolución Semanal 
 export function mockGetRatingSenalesRegion(date = today, region = 'ZM Monterrey') {
   const dates5weeks = getLast5Weeks(date)
   const hours = Array.from({ length: 84 }, (_, i) => 5 + i / 4)
@@ -114,7 +114,7 @@ export function mockGetRatingSenalesRegion(date = today, region = 'ZM Monterrey'
   })
 }
 
-// ─── Tab 8: Encendidos (share + rating) ──────────────────────────────────────
+//  Tab 8: Encendidos (share + rating) 
 export function mockGetEncendidos(date = today, region = 'ZM Monterrey', sample = '15') {
   const channels_enc = ['CANAL 6', 'LAS ESTRELLAS', 'AZTECA 7', 'AZTECA UNO', 'NU9VE', 'CANAL 5']
   const start = setHours(setMinutes(date, 0), 5)
