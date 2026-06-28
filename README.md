@@ -1,12 +1,12 @@
-# Multimedios Dashboard — React
+# Overnight React
 
 Migración del dashboard de TV Ratings de Streamlit a React.
 
 ## Requisitos previos
 
-- Node.js 18+ → https://nodejs.org (descarga la versión LTS)
-- VSCode → https://code.visualstudio.com
-- Git → https://git-scm.com
+- Node.js 18+ - https://nodejs.org
+- VSCode - https://code.visualstudio.com
+- Git - https://git-scm.com
 
 ---
 
@@ -14,7 +14,6 @@ Migración del dashboard de TV Ratings de Streamlit a React.
 
 ```bash
 # 1. Entra a la carpeta del proyecto
-cd multimedios-dashboard
 
 # 2. Instala las dependencias (solo la primera vez)
 npm install
@@ -23,7 +22,7 @@ npm install
 npm run dev
 ```
 
-Abre tu navegador en: **http://localhost:5173**
+Abrir en: **http://localhost:5173**
 
 ---
 
@@ -63,33 +62,14 @@ src/
 
 ## Datos Mock vs FastAPI
 
-Actualmente la app usa **datos simulados** (no necesitas Snowflake).
+Actualmente la app usa **datos simulados** 
 
-Cuando tengas FastAPI listo:
+Cuando creemos FastAPI listo:
 1. Abre `src/api/ratings.js`
 2. Cambia `const USE_MOCK = true` → `false`
-3. Escribe los endpoints reales en la sección de cada función
+3. Escribir los endpoints reales en la sección de cada función
 
 ---
-
-## Flujo de trabajo con Git
-
-```bash
-# Crear una branch para nuevas features
-git checkout -b feature/mi-nueva-funcion
-
-# Guardar cambios
-git add .
-git commit -m "Descripción de lo que hice"
-
-# Subir a GitHub
-git push origin feature/mi-nueva-funcion
-
-# Cuando esté listo, merge a main
-git checkout main
-git merge feature/mi-nueva-funcion
-git push
-```
 
 ---
 
@@ -97,5 +77,5 @@ git push
 
 ```bash
 npm run build
-# Genera carpeta dist/ lista para deploy en Vercel, Cloudflare Pages, etc.
+# Generar carpeta dist/ lista para deploy en Vercel, Cloudflare Pages, etc.
 ```
