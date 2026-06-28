@@ -35,7 +35,7 @@ export default function Tab1_RatingHistorico() {
       text: data.map(r => r[year] != null ? r[year].toFixed(1) : ''),
       textposition: 'top center',
       textfont: { size: 10 },
-      hovertemplate: `Mes: %{x}<br>Rating: %{y}<br>Año: ${year}<extra></extra>`,
+      hovertemplate: `Mes: %{x}<br>Rating: %{y}<br>Año: ${year}<br>Fecha: <extra></extra>`,
     }))
   }, [data])
 
