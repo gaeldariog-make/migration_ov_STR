@@ -1,5 +1,5 @@
 // src/data/constants.js
-// Equivalente a los diccionarios globales en el código Python/Streamlit
+// diccionarios globales en el código Python/Streamlit
 
 // Mapeo de nombre de canal a sus stream codes en Snowflake
 export const CHANNEL_CODES = {
@@ -16,13 +16,13 @@ export const CHANNEL_CODES = {
   'N+ FORO':       ['CDMX-N+ FORO', 'MTY-N+ FORO', 'GDL-N+ FORO', 'INT-N+ FORO'],
 }
 
-// Mapeo inverso: stream code → nombre de canal
+// Mapeo inverso: stream code - nombre de canal
 export const CHANNEL_REVERSE = Object.entries(CHANNEL_CODES).reduce((acc, [name, codes]) => {
   codes.forEach(code => { acc[code] = name })
   return acc
 }, {})
 
-// Canal → Región válida (para el CASE SQL)
+// Canal - Región válida (para el CASE SQL)
 export const CHANNEL_REGION = {
   'CDMX-Azteca 7': 'ZMVM',         'MTY-Azteca 7': 'ZM Monterrey',  'GDL-Azteca 7': 'ZM Guadalajara', 'INT-Azteca 7': 'Interior',
   'CDMX-Azteca Uno': 'ZMVM',       'MTY-Azteca Uno': 'ZM Monterrey', 'GDL-Azteca Uno': 'ZM Guadalajara','INT-Azteca Uno': 'Interior',
@@ -37,7 +37,7 @@ export const CHANNEL_REGION = {
   'CDMX-N+ FORO': 'ZMVM',          'MTY-N+ FORO': 'ZM Monterrey',    'GDL-N+ FORO': 'ZM Guadalajara',   'INT-N+ FORO': 'Interior',
 }
 
-// Canales disponibles por región (para el selectbox de tab3)
+// Canales disponibles por región (selectbox de tab3)
 export const CHANNELS_BY_REGION = {
   'ZMVM':           ['AZTECA 7','AZTECA UNO','CANAL 5','CANAL 6','IMAGEN TV','LAS ESTRELLAS','NU9VE','ADN40','MILENIO','N+ FORO'],
   'ZM Monterrey':   ['AZTECA 7','AZTECA UNO','CANAL 4','CANAL 5','CANAL 6','IMAGEN TV','LAS ESTRELLAS','NU9VE'],
@@ -64,7 +64,7 @@ export const TIME_OPTIONS        = ['60 min', '30 min', '15 min', '10 min', '1 m
 export const TIME_OPTIONS_ENC    = ['60 min', '30 min', '15 min', '10 min']
 export const TIME_OPTIONS_PROG   = ['15 min', '10 min', '5 min', '2 min', '1 min']
 
-// Paleta de colores para gráficas (igual que en Python)
+// Paleta de colores para gráficas 
 export const CHART_PALETTE = ['#80c5fa','#f1a2a3','#7bec9f','#ffd16a','#be00fe']
 export const OV_PALETTE    = ['#ff9999','#5b9bd5','#ed7d31','#ff0000','#00cc99','#92d050','#002060','#d5237c','#806000']
 
